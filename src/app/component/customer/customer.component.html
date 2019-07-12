@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-5">
+    <form [formGroup]="this.customerService.form" (ngSubmit)="submit()">
+      <input type="hidden" formControlName="$key">
+      <div class="form-group">
+        <label for="">Full name</label><br>
+        <input type="text" class="form-control" formControlName="fullname"
+          [ngClass]="{'is-invalid': submited && formControll.fullname.errors}">
+        <div class="invalid-feedback" *ngIf="submited && formControll.fullname.errors">
+          name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Email</label><br>
+        <input type="email" formControlName="email" class="form-control"
+          [ngClass]="{'is-invalid': submited && formControll.email.errors}">
+        <div class="invalid-feedback" *ngIf="submited && formControll.fullname.errors">
+          Email is reqired
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Mobile</label><br>
+        <input class="form-control" formControlName="mobile"
+          [ngClass]="{'is-invalid': submited && formControll.mobile.errors}">
+        <div class="invalid-feedback" *ngIf="submited && formControll.mobile.errors">
+          <span *ngIf="formControll.mobile.errors.required">mobile number is required</span>
+          <span *ngIf="formControll.mobile.errors.minlength">minimum lenght 8</span>
+          <span *ngIf="formControll.mobile.errors.maxlength">Maximum lenght 10</span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="">Location</label><br>
+        <input type="text" class="form-control" formControlName="location"
+          [ngClass]="{'is-invalid': submited && formControll.location.errors}">
+        <div class="invalid-feedback" *ngIf="submited && formControll.location.errors">
+          Loacation is reqired
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-7">
+    <app-customerlist></app-customerlist>
+  </div>
+</div>

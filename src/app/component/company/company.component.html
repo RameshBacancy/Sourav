@@ -1,0 +1,11 @@
+<h3>Parent Component</h3>
+
+<label>Parent Component</label>
+<input type="text" #pcomponent (keyup)="0" [(ngModel)]="CData" />
+
+<p>Value of child component is: {{ CData }}</p>
+
+<app-employee [PData]="pcomponent.value" (childEvent)="CData=$event" (childEventbox)="receiveCollapsed($event)">
+</app-employee>
+
+<div [ngClass]="{'red': collapedSideBar}"></div>

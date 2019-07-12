@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-sm bg-light">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/user']" routerLinkActive="active">User</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" [routerLink]="['/company']" routerLinkActive="active">Comapany</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" [routerLink]="['/reveiw']" routerLinkActive="active">Review</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" [routerLink]="['/event']" routerLinkActive="active">Event</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/customer']" routerLinkActive="active">Customer</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/routeroutlet']" routerLinkActive="active">Routeroutlet</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/xl']" routerLinkActive="active">Xl</a></li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" [routerLink]="['/observable']" routerLinkActive="active">Observable</a>
+    </li>
+    <li>
+      <a class="nav-link" [routerLink]="['/login']" routerLinkActive="active">Login</a>
+    </li>
+    <li class="nav-item" ngbDropdown>
+
+      <a class="nav-link dropdown-toggle" routerLinkActive="active" id="dropdownBasic1" ngbDropdownToggle>
+        Dropdown
+      </a>
+      <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <a class="dropdown-item" [routerLink]="['/errorhandling']" routerLinkActive="active">Error Handling</a>
+        <a class="dropdown-item" [routerLink]="['/viewchild']" routerLinkActive="active">ViewChild</a>
+        <a class="dropdown-item" [routerLink]="['/filter']" routerLinkActive="active">FilterMap</a>
+        <a class="dropdown-item" [routerLink]="['/addrow']" routerLinkActive="active">Add Row And Delete Row</a>
+        <a class="dropdown-item" [routerLink]="['/crud']" routerLinkActive="active">Crud</a>
+        <a class="dropdown-item" [routerLink]="['/addprint']" routerLinkActive="active">Add Print</a>
+
+        <a class="dropdown-item" [routerLink]="['/calculator']" routerLinkActive="active">Calculator</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+    </li>
+  </ul>
+</nav>

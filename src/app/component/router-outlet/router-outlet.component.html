@@ -1,0 +1,25 @@
+<p>
+  router-outlet works!
+</p>
+<nav>
+  <ul>
+    <li>
+      <a [routerLink]="['products']" routerLinkActive="router-link-active">Product</a>
+    </li>
+    <!-- <li>
+      <a [routerLink]="['productdetall']" routerLinkActive="router-link-active">Productde</a>
+    </li> -->
+    <li>
+      <a [routerLink]="[{ outlets:{booklist: ['productdetall']} }]">
+        Products List
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+
+<router-outlet> </router-outlet>
+<br>
+<router-outlet name='booklist'> </router-outlet>
+<router-outlet name="sidebar"></router-outlet>

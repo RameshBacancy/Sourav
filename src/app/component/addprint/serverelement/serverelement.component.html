@@ -1,0 +1,18 @@
+<div>
+  <div class="card" style="width: 18rem;">
+    <div class="card-header" *ngIf="item.type === 'server'" style="background: red;">
+      {{item.name}}
+    </div>
+    <div class="card-header" *ngIf="item.type === 'blueprint'" style="background: blue;">
+      {{item.name}}
+    </div>
+    <div class="card-content">
+      <div *ngIf="item.type === 'server'" style="color: red;">
+        {{item.content}}
+      </div>
+      <div *ngIf="item.type ==='blueprint'" style="color:blue;">
+        {{item.content}}
+      </div>
+    </div>
+  </div>
+</div>

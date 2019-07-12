@@ -1,0 +1,64 @@
+<h2 (click)="click()">API CALL HERE</h2>
+<br>
+<input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
+<div class="row">
+  <div class="col-sm-1">
+    <input type="checkbox" checked name="all" [checked]="isAllChecked()" (change)="checkAll($event)" />
+  </div>
+  <div class="col-sm-2">
+    <input type="checkbox" [(ngModel)]="theCheckboxId" (change)="showIdEvent($event)" />
+  </div>
+  <div class="col-sm-3">
+    <input type="checkbox" [(ngModel)]="theCheckboxName" (change)="showNameEvent($event)" />
+  </div>
+  <div class="col-sm-3">
+    <input type="checkbox" [(ngModel)]="theCheckboxAge" (change)="showAgeEvent($event)" />
+  </div>
+  <div class="col-sm-3">
+    <input type="checkbox" [(ngModel)]="theCheckboxSalary" (change)="showSalaryEvent($event)" />
+  </div>
+</div>
+
+<div class="row">
+
+
+  <div class="col-sm-1"><strong>All</strong></div>
+  <div class="col-sm-2"><strong>ID</strong></div>
+  <div class="col-sm-3"><strong>Name</strong></div>
+  <div class="col-sm-3"><strong>AGE</strong></div>
+  <div class="col-sm-3"><strong>SALLERY</strong></div>
+</div>
+
+<div class="row"
+  *ngFor="let user of users | paginate: config | grdFilter: {id: searchText, employee_name:searchText,  employee_age: searchText}; let i=index;">
+  <div class="col-sm-1">
+    <input type="checkbox" value="" [(ngModel)]="user.checkAllblock" />
+  </div>
+  <div class="col-sm-2">
+    <div *ngIf="userObj.theCheckboxId">{{ user.id }}</div>
+  </div>
+  <div class="col-sm-3">
+    <div *ngIf="userObj.theCheckboxName"> {{ user.employee_name }}</div>
+  </div>
+  <div class="col-sm-3">
+    <div *ngIf="userObj.theCheckboxAge">{{ user.employee_age }}</div>
+  </div>
+  <div class="col-sm-3">
+    <div *ngIf="userObj.theCheckboxSalary">{{ user.employee_salary }}</div>
+  </div>
+</div>
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+<!-- 
+<ul>
+  <li *ngFor="let product of products">
+    <a [routerLink]="['user/app-view',products.id]">
+      {{product.menu}}</a>
+  </li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let product of products">
+    <a [routerLink]="['user', 'app-view', product.id]">{{product.name}}</a>
+  </li>
+</ul>

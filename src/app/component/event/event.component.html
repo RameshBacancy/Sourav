@@ -1,0 +1,6 @@
+<!-- <app-toggle [sideBarbox]="sidebar" ></app-toggle>
+<app-child #sidebar></app-child> -->
+<app-sidebar></app-sidebar>
+
+<app-toggle (Toogle_block)="toggleSideBar()"></app-toggle>
+<app-child [isOpen]="sideBarIsOpened"></app-child>

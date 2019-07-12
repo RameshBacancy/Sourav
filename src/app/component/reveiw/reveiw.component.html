@@ -1,0 +1,22 @@
+<input type="text" name="serverName" [(ngModel)]="serverName">
+<input type="text" name="serverContent" [(ngModel)]="serverContent">
+<button class="btn btn-dark" (click)="AddServer()">Add Server Red</button>
+<button class="btn btn-dark" (click)="AddServerblue()">Add Server Blue</button>
+<br>
+<div *ngFor="let elements of serverElements">
+    <h2>{{elements.name}}</h2>
+    <p>
+        <strong *ngIf="elements.type === 'server'" style="color: red">
+            {{elements.content}}
+        </strong>
+        <em *ngIf="elements.type === 'blueserver'" style="color: blue">
+            {{elements.content}}
+        </em>
+    </p>
+</div>
+
+<h2>Tabing </h2>
+<app-childbx (featureSelect)=onnavigated($event)></app-childbx>
+<app-childblock *ngIf="loadedfeature === 'recipe'"></app-childblock>
+<app-oldchild *ngIf="loadedfeature === 'shopping-list' "></app-oldchild>
+<div *ngIf="loadedfeature === 'shopping-list2' ">Sourav</div>
